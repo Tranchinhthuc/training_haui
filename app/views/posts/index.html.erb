@@ -12,5 +12,6 @@
     </p>
     <p><%= post.content.first(1000) %></p>
     <%= link_to "Read more ...", post_path(post) %></br>
+    <%= social_share_button_tag(post.title, url: post_url(post), :popup => "true") %>
   </div>
 <% end %>
