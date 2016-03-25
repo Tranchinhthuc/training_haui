@@ -1,0 +1,12 @@
+<%#= link_to "Add a post", "/posts/new" %> 
+<%= link_to "Add a post", new_post_path %> 
+</br><br>
+<hr>
+<% @hot_posts.each do |post| %>
+  Title: <%= post.title %></br>
+  Content: <%= post.content %></br>
+  <%= link_to "Details", "/posts/#{post.id}" %>
+  <%= link_to "Delete", "/posts/#{post.id}", method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to "Edit", "/posts/#{post.id}/edit" %>
+  <hr>
+<% end %>

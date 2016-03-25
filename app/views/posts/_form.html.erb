@@ -1,0 +1,21 @@
+<% if @post.errors.any? %>
+  <ul>
+    <% @post.errors.full_messages.each do |msg| %>
+      <li class="text-danger"><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+<div class="form-group">
+  <%= f.label :title %>
+  <%= f.text_field :title, class: "form-control" %>
+</div>
+
+<div class="form-group">
+  <!-- <%= f.label :content %>:<br> -->
+  <%= f.label :content %>
+  <%= f.text_area :content, class: "form-control", rows: 10 %>
+</div>
+
+<div class="form-group">
+  <%= f.submit action_name=="new" ? "Post" : "Update", class: "btn btn-primary btn-block" %>
+</div>

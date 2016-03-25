@@ -1,0 +1,16 @@
+<%= link_to "Add a post", new_post_path, class: "btn btn-success" %> 
+<hr>
+<% @posts.each do |post| %>
+  <div>
+    <h2><%= post.title %></h2>
+    <p>
+      <%= link_to "Edit", edit_post_path(post), class:"text-muted action-link" %>
+      <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class:"text-muted action-link" %>
+      <span class="pull-right text-muted">
+        <%= post.created_at.strftime("%B - %d - %Y") %>, Posted by <a href="#">Thuc</a>
+      </span>
+    </p>
+    <p><%= post.content.first(1000) %></p>
+    <%= link_to "Read more ...", post_path(post) %></br>
+  </div>
+<% end %>

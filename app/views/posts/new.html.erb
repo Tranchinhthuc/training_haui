@@ -1,0 +1,6 @@
+<div class="col-md-8 col-md-offset-2">
+  <h1>Create a post</h1>
+  <%= form_for :post, url: "/posts" do |f| %>
+    <%= render "form", f: f %>
+  <% end %>
+</div>
